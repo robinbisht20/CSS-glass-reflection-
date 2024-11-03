@@ -1,0 +1,186 @@
+/* author: https://codepen.io/dovydas/pen/WRpBEp
+Dovydas */
+@import url("https://fonts.googleapis.com/css?family=Lato:100");
+.scene {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  perspective: 1000px;
+  overflow: hidden;
+  user-select: none;
+  font-family: "Lato", sans-serif;
+  background: #131315;
+}
+
+.canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 280px;
+  height: 430px;
+  transform-origin: center center 0px;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+  background: #28495B;
+}
+.canvas .poster {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+.canvas .poster-title {
+  position: absolute;
+  width: 100px;
+  left: 25px;
+  bottom: 25px;
+  font-weight: 100;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 40px;
+  line-height: 45px;
+}
+.canvas div {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.title {
+  position: absolute;
+  right: 0;
+  font-weight: 100;
+  font-size: 12px;
+  color: white;
+  transform: translateX(120%);
+}
+.title .subtitle {
+  margin-top: 10px;
+  width: 110px;
+  line-height: 17px;
+  font-size: 9px;
+  color: #bebebe;
+}
+
+.glass {
+  position: absolute;
+  width: 280px;
+  height: 430px;
+  transform: translateZ(3px);
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/258608/room.png");
+  background-position: 0px 0px;
+  opacity: 0.01;
+}
+
+.frame-left-inner {
+  left: 0;
+  width: 4px;
+  height: 430px;
+  transform-origin: left bottom;
+  transform: rotateY(-90deg);
+  background: #171717;
+}
+
+.frame-left-surface {
+  right: 0;
+  width: 5px;
+  height: 430px;
+  transform-origin: right bottom;
+  transform: rotateY(90deg);
+  background: #242424;
+}
+
+.frame-left-outter {
+  top: -5px;
+  width: 15px;
+  height: 440px;
+  transform-origin: left bottom;
+  transform: rotateY(90deg);
+  background: black;
+}
+
+.frame-right-inner {
+  right: 0;
+  width: 4px;
+  height: 430px;
+  transform-origin: right bottom;
+  transform: rotateY(90deg);
+  background: black;
+}
+
+.frame-right-surface {
+  left: 0;
+  width: 5px;
+  height: 430px;
+  transform-origin: left bottom;
+  transform: rotateY(-90deg);
+  background: #242424;
+}
+
+.frame-right-outter {
+  right: 0;
+  top: -5px;
+  width: 15px;
+  height: 440px;
+  transform-origin: right bottom;
+  transform: rotateY(-90deg);
+  background: #303030;
+}
+
+.frame-top-inner {
+  right: 0;
+  width: 280px;
+  height: 4px;
+  transform-origin: right top;
+  transform: rotateX(90deg);
+  background: black;
+}
+
+.frame-top-surface {
+  bottom: 0;
+  left: -5px;
+  width: 290px;
+  height: 5px;
+  transform-origin: right bottom;
+  transform: rotateX(-90deg);
+  background: #242424;
+}
+
+.frame-top-outter {
+  width: 290px;
+  height: 15px;
+  transform-origin: right top;
+  transform: rotateX(-90deg);
+  background: #3d3d3d;
+}
+
+.frame-bottom-inner {
+  bottom: 0;
+  left: 0;
+  width: 280px;
+  height: 4px;
+  transform-origin: right bottom;
+  transform: rotateX(-90deg);
+  background: #303030;
+}
+
+.frame-bottom-surface {
+  top: 0px;
+  left: -5px;
+  width: 290px;
+  height: 5px;
+  transform-origin: right top;
+  transform: rotateX(90deg);
+  background: #242424;
+}
+
+.frame-bottom-outter {
+  bottom: 0;
+  width: 290px;
+  height: 15px;
+  transform-origin: right bottom;
+  transform: rotateX(90deg);
+  background: black;
+}

@@ -1,0 +1,213 @@
+$frame-height: 430px;
+$frame-width: 280px;
+$frame-color: rgb(10, 10, 10);
+
+$frame-outside-depth: 15px;
+$frame-inside-depth: 4px;
+$frame-thickness: 5px;
+$reflectiveness: 0.01;
+
+@import url('https://fonts.googleapis.com/css?family=Lato:100');
+
+.scene {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  perspective: 1000px;
+  overflow: hidden;
+  user-select: none;
+  font-family: 'Lato', sans-serif;
+  background: rgb(19, 19, 21);
+}
+
+.canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: $frame-width;
+  height: $frame-height;
+  transform-origin: center center 0px;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d; 
+  background: #28495B;
+  
+  .poster {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+  }
+  
+  .poster-title {
+      position: absolute;
+      width: 100px;
+      left: 25px;
+      bottom: 25px;    
+      font-weight: 100;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 40px;
+      line-height: 45px;
+    }
+  
+  div {
+    position: absolute;
+    transform-style: preserve-3d;
+  }
+}
+
+.title {
+  position: absolute;
+  right: 0;
+  font-weight: 100;
+  font-size: 12px;
+  color: white;    
+  transform: translateX(120%);
+  
+  .subtitle {
+    margin-top: 10px;
+    width: 110px;
+    line-height: 17px;
+    font-size: 9px;
+    color: rgb(190, 190, 190)
+  }
+}
+
+.glass {
+  position: absolute;
+  width: $frame-width;
+  height: $frame-height;
+    
+  transform: translateZ(3px);
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/258608/room.png');
+  background-position: 0px 0px;
+  opacity: $reflectiveness;
+  
+}
+
+.frame-left-inner {
+  left: 0;
+  width: $frame-inside-depth;
+  height: $frame-height;  
+  transform-origin: left bottom;
+  transform: rotateY(-90deg);
+  
+  background: lighten($frame-color, 5%);
+}
+
+.frame-left-surface {
+  right: 0;
+  width: $frame-thickness;
+  height: $frame-height;
+  transform-origin: right bottom;
+  transform: rotateY(90deg);
+  
+  background: lighten($frame-color, 10%);  
+}
+
+.frame-left-outter {
+  top: -$frame-thickness;
+  width: $frame-outside-depth;
+  height: $frame-height + $frame-thickness * 2;
+  transform-origin: left bottom;
+  transform: rotateY(90deg);
+  
+  background: darken($frame-color, 15%);
+}
+
+.frame-right-inner {
+  right: 0;
+  width: $frame-inside-depth;
+  height: $frame-height;
+  transform-origin: right bottom;
+  transform: rotateY(90deg);
+  
+  background: darken($frame-color, 15%);
+}
+
+.frame-right-surface {
+  left: 0;
+  width: $frame-thickness;
+  height: $frame-height;
+  transform-origin: left bottom;
+  transform: rotateY(-90deg);
+  
+  background: lighten($frame-color, 10%);
+}
+
+.frame-right-outter {
+  right: 0;
+  top: -$frame-thickness;
+  width: $frame-outside-depth;
+  height: $frame-height + $frame-thickness * 2;
+  transform-origin: right bottom;
+  transform: rotateY(-90deg);
+  
+  background: lighten($frame-color, 15%);
+}
+
+
+.frame-top-inner {
+  right: 0;
+  width: $frame-width;
+  height: $frame-inside-depth;
+  transform-origin: right top;
+  transform: rotateX(90deg);
+  
+  background: darken($frame-color, 20%);
+}
+
+.frame-top-surface {
+  bottom: 0;
+  left: -$frame-thickness;
+  width: $frame-width + $frame-thickness*2;
+  height: $frame-thickness;
+  transform-origin: right bottom;
+  transform: rotateX(-90deg);
+  
+  background: lighten($frame-color, 10%);
+}
+
+.frame-top-outter {
+  width: $frame-width + $frame-thickness * 2;
+  height: $frame-outside-depth;
+  transform-origin: right top;
+  transform: rotateX(-90deg);
+  
+  background: lighten($frame-color, 20%);
+}
+
+.frame-bottom-inner {
+  bottom: 0;
+  left: 0;
+  width: $frame-width;
+  height: $frame-inside-depth;
+  transform-origin: right bottom;
+  transform: rotateX(-90deg);
+  
+  background: lighten($frame-color, 15%);
+}
+
+.frame-bottom-surface {
+  top : 0px;
+  left: -$frame-thickness;
+  width: $frame-width + $frame-thickness * 2;
+  height: $frame-thickness;
+  transform-origin: right top;
+  transform: rotateX(90deg);
+  
+  background: lighten($frame-color, 10%);
+}
+
+.frame-bottom-outter {
+  bottom: 0;
+  width: $frame-width + $frame-thickness*2;
+  height: $frame-outside-depth;
+  transform-origin: right bottom;
+  transform: rotateX(90deg);
+  
+  background: darken($frame-color, 20%);
+}
